@@ -1,0 +1,38 @@
+{%extends 'main.html'%}
+
+
+{%block content%}
+<style>
+    .home-container{
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr; /* this has 2 columns, specifying in what fraction the 2div provided below should be displayed in webpage */
+        /*make sure to have same number of div as columns in "grid-template-columns" */
+    }
+
+
+
+</style>
+
+
+<div class="home-container">
+    <div>
+        {% include 'base/topic_component.html' %}
+    </div>
+
+    <div>
+        <h2>{{room_count}} rooms available</h2>
+        <a href="{%url 'create-room'%}">Create Room</a>
+
+        {% include 'base/feed_component.html' %}
+
+
+    </div>
+
+
+    <div>
+        {% include 'base/activity_component.html' %}
+    </div>
+
+</div>
+
+    {%endblock%}

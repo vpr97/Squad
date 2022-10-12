@@ -1,0 +1,14 @@
+<!-- This is a comman delete page for all delete options in the website -->
+
+{% extends "main.html"%} <!-- template hierarchy - inheritance within templates -->
+
+{%block content%}
+
+<form method="POST" action="">
+    {%csrf_token%}
+    <p>Are you sure you want to delete the "{{obj}}"?</p> <!-- passing the delete value as obj as this is comman template -->
+    <a href = "{{request.META.HTTP_REFERER}}">NO</a> <!-- "request.META.HTTP_REFERER" is used for user to go back to the previous page-->
+    <input type="submit" value="confirm"/>
+</form>
+
+{%endblock content%}
